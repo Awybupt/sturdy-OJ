@@ -1,0 +1,49 @@
+// first version of oj.proto
+// mike@2018.12.06
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.onlinejudge";
+option java_outer_classname = "OnlineJudgeProto";
+option objc_class_prefix = "OJP";
+
+package onlinejudge;
+
+//define massage type.
+service OnlineJudge {
+  rpc listQues(qSubmit) returns (stream qName) {}
+  //list QuestionsList with sequence number.
+  //server to client streaming RPC.
+
+  rpc detailQues(qName) returns (qUestion) {}
+  //Output the details of a specific question.
+  //simple RPC
+
+  rpc jUdge(qSubmit) returns (replyResult) {}
+  //Online compile the Code.
+  //return submit massage.'success'/'fail'
+  //simple RPC
+
+  rpc rEsult(qName) returns (replyResult) {}
+  //input sequence number
+  //return number's result.
+  //simple RPC 
+}
+message qName {
+  string keyname = 1;
+}
+
+message qUestion {
+  qName N = 1;//key value.
+  string message = 2;
+} 
+
+message qSubmit {
+  qName N = 1;
+  string qSubmitCode =2;
+}
+
+message replyResult {
+  string message = 1;
+}

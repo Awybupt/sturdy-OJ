@@ -6,4 +6,5 @@
     * `which git`
     * `xcode-select --install`
 
-
+2. failed in compiling in ubuntu with gRPC.
+   * [csdn schema](https://blog.csdn.net/aixinaxc/article/details/79912823)

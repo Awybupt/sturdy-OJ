@@ -11,8 +11,7 @@
 class database{
     
 private:
-    MYSQL *conn_ptr=NULL;
-    
+    MYSQL *conn_ptr=NULL;    
 public:
     database(const char* host,const char* user,const char* pw,const char* db)
     {
@@ -93,13 +92,13 @@ public:
         
         int res = mysql_query(conn_ptr,p);
         if (res){
-            std::cout<<"SELECT error: "<<mysql_error(conn_ptr)<<std::endl;
+            std::cout<<"LOG---SELECT error: "<<mysql_error(conn_ptr)<<std::endl;
         }
         else{
-            MYSQL_RES* res_ptr=mysql_store_result(conn_ptr);
+            MYSQL_RES* res_ptr = mysql_store_result(conn_ptr);
             if (res_ptr)
             {
-                unsigned long anslen=(unsigned long) mysql_num_rows(res_ptr);
+                unsigned long anslen = (unsigned long)mysql_num_rows(res_ptr);
                 std::cout<<"LOG---Retrieved "<<anslen<<" rows:"<<std::endl;
                 if (anslen>0)
                 {       

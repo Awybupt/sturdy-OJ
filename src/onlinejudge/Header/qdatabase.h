@@ -87,8 +87,10 @@ public:
     }
     int dbSubmit(std::string name){
         int ans=0;
+        std::string filename=name+"/main.cpp";
         name="SELECT qHeader FROM question WHERE qName=\""+name+"\"";
         const char* p = name.data();
+        const char* pfn=filename.data();
         
         int res = mysql_query(conn_ptr,p);
         if (res){
@@ -105,7 +107,7 @@ public:
                     MYSQL_ROW sqlrow;
                     while((sqlrow = mysql_fetch_row(res_ptr)))
                     {
-                        std::ofstream mycout("test/main.cpp");
+                        std::ofstream mycout(pfn);
                         if (mycout.is_open())
                         {
                             ans = 1;
@@ -128,7 +130,6 @@ public:
         int ans;
         name="SELECT qStatus FROM question WHERE qName=\""+name+"\"";
         const char* p = name.data();
-        
         int res = mysql_query(conn_ptr,p);
         if (res){
             std::cout<<"SELECT error: "<<mysql_error(conn_ptr)<<std::endl;
@@ -148,6 +149,16 @@ public:
             }
         }
         return ans;
+    }
+    
+    void dbChangestatus(std::string name){
+        name="UPDATE question SET qStatus=1 WHERE qName=\""+name+"\"";
+        const char* p = name.data();
+        
+        int res = mysql_query(conn_ptr,p);
+        if (res){
+            std::cout<<"Update error: "<<mysql_error(conn_ptr)<<std::endl;
+        }
     }
 };
 #endif /* qdatabase_h */

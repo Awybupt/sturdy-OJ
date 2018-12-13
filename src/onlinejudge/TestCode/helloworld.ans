@@ -1,0 +1,7 @@
+class Solution{ 
+public:
+  std::string myprint()
+  {
+     return "Hello World!";
+  }
+};

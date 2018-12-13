@@ -53,7 +53,7 @@ class OnlineJudgeImpl final : public OnlineJudge::Service {
         std::string Questioname=qn->keyname();
         rqn->set_nickn(Questioname);
         
-        rn=judgeDetail(Questioname);
+        Questioname=judgeDetail(Questioname);
         rqn->set_message(Questioname);
         return Status::OK;
     }

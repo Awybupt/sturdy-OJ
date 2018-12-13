@@ -46,7 +46,7 @@ std::string judgeResult(std::string qName)
     database *temp=new database(Dhost,Ddb,Dpw,Dtb);
     int he=temp->dbResult(temps);
     std::string ans="fail";
-    if (!he)//have more choice!
+    if (he)//have more choice!
         ans="success";
     delete temp;
     return ans;

@@ -269,6 +269,20 @@ class qUestion : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // accessors -------------------------------------------------------
 
+  // string nickn = 1;
+  void clear_nickn();
+  static const int kNicknFieldNumber = 1;
+  const ::std::string& nickn() const;
+  void set_nickn(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nickn(::std::string&& value);
+  #endif
+  void set_nickn(const char* value);
+  void set_nickn(const char* value, size_t size);
+  ::std::string* mutable_nickn();
+  ::std::string* release_nickn();
+  void set_allocated_nickn(::std::string* nickn);
+
   // string message = 2;
   void clear_message();
   static const int kMessageFieldNumber = 2;
@@ -283,24 +297,12 @@ class qUestion : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
-  // .onlinejudge.qName N = 1;
-  bool has_n() const;
-  void clear_n();
-  static const int kNFieldNumber = 1;
-  private:
-  const ::onlinejudge::qName& _internal_n() const;
-  public:
-  const ::onlinejudge::qName& n() const;
-  ::onlinejudge::qName* release_n();
-  ::onlinejudge::qName* mutable_n();
-  void set_allocated_n(::onlinejudge::qName* n);
-
   // @@protoc_insertion_point(class_scope:onlinejudge.qUestion)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr nickn_;
   ::google::protobuf::internal::ArenaStringPtr message_;
-  ::onlinejudge::qName* n_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_onlinejudge_2eproto::TableStruct;
 };
@@ -393,9 +395,23 @@ class qSubmit : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // string qSubmitCode = 2;
+  // string nickn = 1;
+  void clear_nickn();
+  static const int kNicknFieldNumber = 1;
+  const ::std::string& nickn() const;
+  void set_nickn(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nickn(::std::string&& value);
+  #endif
+  void set_nickn(const char* value);
+  void set_nickn(const char* value, size_t size);
+  ::std::string* mutable_nickn();
+  ::std::string* release_nickn();
+  void set_allocated_nickn(::std::string* nickn);
+
+  // string qsubmitcode = 2;
   void clear_qsubmitcode();
-  static const int kQSubmitCodeFieldNumber = 2;
+  static const int kQsubmitcodeFieldNumber = 2;
   const ::std::string& qsubmitcode() const;
   void set_qsubmitcode(const ::std::string& value);
   #if LANG_CXX11
@@ -407,24 +423,12 @@ class qSubmit : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_qsubmitcode();
   void set_allocated_qsubmitcode(::std::string* qsubmitcode);
 
-  // .onlinejudge.qName N = 1;
-  bool has_n() const;
-  void clear_n();
-  static const int kNFieldNumber = 1;
-  private:
-  const ::onlinejudge::qName& _internal_n() const;
-  public:
-  const ::onlinejudge::qName& n() const;
-  ::onlinejudge::qName* release_n();
-  ::onlinejudge::qName* mutable_n();
-  void set_allocated_n(::onlinejudge::qName* n);
-
   // @@protoc_insertion_point(class_scope:onlinejudge.qSubmit)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr nickn_;
   ::google::protobuf::internal::ArenaStringPtr qsubmitcode_;
-  ::onlinejudge::qName* n_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_onlinejudge_2eproto::TableStruct;
 };
@@ -607,58 +611,57 @@ inline void qName::set_allocated_keyname(::std::string* keyname) {
 
 // qUestion
 
-// .onlinejudge.qName N = 1;
-inline bool qUestion::has_n() const {
-  return this != internal_default_instance() && n_ != NULL;
+// string nickn = 1;
+inline void qUestion::clear_nickn() {
+  nickn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void qUestion::clear_n() {
-  if (GetArenaNoVirtual() == NULL && n_ != NULL) {
-    delete n_;
-  }
-  n_ = NULL;
+inline const ::std::string& qUestion::nickn() const {
+  // @@protoc_insertion_point(field_get:onlinejudge.qUestion.nickn)
+  return nickn_.GetNoArena();
 }
-inline const ::onlinejudge::qName& qUestion::_internal_n() const {
-  return *n_;
-}
-inline const ::onlinejudge::qName& qUestion::n() const {
-  const ::onlinejudge::qName* p = n_;
-  // @@protoc_insertion_point(field_get:onlinejudge.qUestion.N)
-  return p != NULL ? *p : *reinterpret_cast<const ::onlinejudge::qName*>(
-      &::onlinejudge::_qName_default_instance_);
-}
-inline ::onlinejudge::qName* qUestion::release_n() {
-  // @@protoc_insertion_point(field_release:onlinejudge.qUestion.N)
+inline void qUestion::set_nickn(const ::std::string& value) {
   
-  ::onlinejudge::qName* temp = n_;
-  n_ = NULL;
-  return temp;
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:onlinejudge.qUestion.nickn)
 }
-inline ::onlinejudge::qName* qUestion::mutable_n() {
+#if LANG_CXX11
+inline void qUestion::set_nickn(::std::string&& value) {
   
-  if (n_ == NULL) {
-    auto* p = CreateMaybeMessage<::onlinejudge::qName>(GetArenaNoVirtual());
-    n_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:onlinejudge.qUestion.N)
-  return n_;
+  nickn_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:onlinejudge.qUestion.nickn)
 }
-inline void qUestion::set_allocated_n(::onlinejudge::qName* n) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete n_;
-  }
-  if (n) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      n = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, n, submessage_arena);
-    }
+#endif
+inline void qUestion::set_nickn(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:onlinejudge.qUestion.nickn)
+}
+inline void qUestion::set_nickn(const char* value, size_t size) {
+  
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:onlinejudge.qUestion.nickn)
+}
+inline ::std::string* qUestion::mutable_nickn() {
+  
+  // @@protoc_insertion_point(field_mutable:onlinejudge.qUestion.nickn)
+  return nickn_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* qUestion::release_nickn() {
+  // @@protoc_insertion_point(field_release:onlinejudge.qUestion.nickn)
+  
+  return nickn_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void qUestion::set_allocated_nickn(::std::string* nickn) {
+  if (nickn != NULL) {
     
   } else {
     
   }
-  n_ = n;
-  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qUestion.N)
+  nickn_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickn);
+  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qUestion.nickn)
 }
 
 // string message = 2;
@@ -718,100 +721,99 @@ inline void qUestion::set_allocated_message(::std::string* message) {
 
 // qSubmit
 
-// .onlinejudge.qName N = 1;
-inline bool qSubmit::has_n() const {
-  return this != internal_default_instance() && n_ != NULL;
+// string nickn = 1;
+inline void qSubmit::clear_nickn() {
+  nickn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void qSubmit::clear_n() {
-  if (GetArenaNoVirtual() == NULL && n_ != NULL) {
-    delete n_;
-  }
-  n_ = NULL;
+inline const ::std::string& qSubmit::nickn() const {
+  // @@protoc_insertion_point(field_get:onlinejudge.qSubmit.nickn)
+  return nickn_.GetNoArena();
 }
-inline const ::onlinejudge::qName& qSubmit::_internal_n() const {
-  return *n_;
-}
-inline const ::onlinejudge::qName& qSubmit::n() const {
-  const ::onlinejudge::qName* p = n_;
-  // @@protoc_insertion_point(field_get:onlinejudge.qSubmit.N)
-  return p != NULL ? *p : *reinterpret_cast<const ::onlinejudge::qName*>(
-      &::onlinejudge::_qName_default_instance_);
-}
-inline ::onlinejudge::qName* qSubmit::release_n() {
-  // @@protoc_insertion_point(field_release:onlinejudge.qSubmit.N)
+inline void qSubmit::set_nickn(const ::std::string& value) {
   
-  ::onlinejudge::qName* temp = n_;
-  n_ = NULL;
-  return temp;
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:onlinejudge.qSubmit.nickn)
 }
-inline ::onlinejudge::qName* qSubmit::mutable_n() {
+#if LANG_CXX11
+inline void qSubmit::set_nickn(::std::string&& value) {
   
-  if (n_ == NULL) {
-    auto* p = CreateMaybeMessage<::onlinejudge::qName>(GetArenaNoVirtual());
-    n_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:onlinejudge.qSubmit.N)
-  return n_;
+  nickn_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:onlinejudge.qSubmit.nickn)
 }
-inline void qSubmit::set_allocated_n(::onlinejudge::qName* n) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete n_;
-  }
-  if (n) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      n = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, n, submessage_arena);
-    }
+#endif
+inline void qSubmit::set_nickn(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:onlinejudge.qSubmit.nickn)
+}
+inline void qSubmit::set_nickn(const char* value, size_t size) {
+  
+  nickn_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:onlinejudge.qSubmit.nickn)
+}
+inline ::std::string* qSubmit::mutable_nickn() {
+  
+  // @@protoc_insertion_point(field_mutable:onlinejudge.qSubmit.nickn)
+  return nickn_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* qSubmit::release_nickn() {
+  // @@protoc_insertion_point(field_release:onlinejudge.qSubmit.nickn)
+  
+  return nickn_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void qSubmit::set_allocated_nickn(::std::string* nickn) {
+  if (nickn != NULL) {
     
   } else {
     
   }
-  n_ = n;
-  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qSubmit.N)
+  nickn_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nickn);
+  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qSubmit.nickn)
 }
 
-// string qSubmitCode = 2;
+// string qsubmitcode = 2;
 inline void qSubmit::clear_qsubmitcode() {
   qsubmitcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline const ::std::string& qSubmit::qsubmitcode() const {
-  // @@protoc_insertion_point(field_get:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_get:onlinejudge.qSubmit.qsubmitcode)
   return qsubmitcode_.GetNoArena();
 }
 inline void qSubmit::set_qsubmitcode(const ::std::string& value) {
   
   qsubmitcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_set:onlinejudge.qSubmit.qsubmitcode)
 }
 #if LANG_CXX11
 inline void qSubmit::set_qsubmitcode(::std::string&& value) {
   
   qsubmitcode_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_set_rvalue:onlinejudge.qSubmit.qsubmitcode)
 }
 #endif
 inline void qSubmit::set_qsubmitcode(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   qsubmitcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_set_char:onlinejudge.qSubmit.qsubmitcode)
 }
 inline void qSubmit::set_qsubmitcode(const char* value, size_t size) {
   
   qsubmitcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_set_pointer:onlinejudge.qSubmit.qsubmitcode)
 }
 inline ::std::string* qSubmit::mutable_qsubmitcode() {
   
-  // @@protoc_insertion_point(field_mutable:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_mutable:onlinejudge.qSubmit.qsubmitcode)
   return qsubmitcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 inline ::std::string* qSubmit::release_qsubmitcode() {
-  // @@protoc_insertion_point(field_release:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_release:onlinejudge.qSubmit.qsubmitcode)
   
   return qsubmitcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -822,7 +824,7 @@ inline void qSubmit::set_allocated_qsubmitcode(::std::string* qsubmitcode) {
     
   }
   qsubmitcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), qsubmitcode);
-  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qSubmit.qSubmitCode)
+  // @@protoc_insertion_point(field_set_allocated:onlinejudge.qSubmit.qsubmitcode)
 }
 
 // -------------------------------------------------------------------

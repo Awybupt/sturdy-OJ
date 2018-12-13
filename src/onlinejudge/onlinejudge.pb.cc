@@ -19,9 +19,6 @@
 #endif
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_onlinejudge_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_onlinejudge_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_qName;
-}  // namespace protobuf_onlinejudge_2eproto
 namespace onlinejudge {
 class qNameDefaultTypeInternal {
  public:
@@ -70,9 +67,8 @@ static void InitDefaultsqUestion() {
   ::onlinejudge::qUestion::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_qUestion =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsqUestion}, {
-      &protobuf_onlinejudge_2eproto::scc_info_qName.base,}};
+::google::protobuf::internal::SCCInfo<0> scc_info_qUestion =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsqUestion}, {}};
 
 static void InitDefaultsqSubmit() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -85,9 +81,8 @@ static void InitDefaultsqSubmit() {
   ::onlinejudge::qSubmit::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_qSubmit =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsqSubmit}, {
-      &protobuf_onlinejudge_2eproto::scc_info_qName.base,}};
+::google::protobuf::internal::SCCInfo<0> scc_info_qSubmit =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsqSubmit}, {}};
 
 static void InitDefaultsreplyResult() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -124,14 +119,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qUestion, n_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qUestion, nickn_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qUestion, message_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qSubmit, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qSubmit, n_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qSubmit, nickn_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::qSubmit, qsubmitcode_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::onlinejudge::replyResult, _internal_metadata_),
@@ -176,22 +171,21 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\021onlinejudge.proto\022\013onlinejudge\"\030\n\005qNam"
-      "e\022\017\n\007keyname\030\001 \001(\t\":\n\010qUestion\022\035\n\001N\030\001 \001("
-      "\0132\022.onlinejudge.qName\022\017\n\007message\030\002 \001(\t\"="
-      "\n\007qSubmit\022\035\n\001N\030\001 \001(\0132\022.onlinejudge.qName"
-      "\022\023\n\013qSubmitCode\030\002 \001(\t\"\036\n\013replyResult\022\017\n\007"
-      "message\030\001 \001(\t2\367\001\n\013OnlineJudge\0228\n\010listQue"
-      "s\022\024.onlinejudge.qSubmit\032\022.onlinejudge.qN"
-      "ame\"\0000\001\0229\n\ndetailQues\022\022.onlinejudge.qNam"
-      "e\032\025.onlinejudge.qUestion\"\000\0229\n\005jUdge\022\024.on"
-      "linejudge.qSubmit\032\030.onlinejudge.replyRes"
-      "ult\"\000\0228\n\006rEsult\022\022.onlinejudge.qName\032\030.on"
-      "linejudge.replyResult\"\000B8\n\034io.grpc.examp"
-      "les.onlinejudgeB\020OnlineJudgeProtoP\001\242\002\003OJ"
-      "Pb\006proto3"
+      "e\022\017\n\007keyname\030\001 \001(\t\"*\n\010qUestion\022\r\n\005nickn\030"
+      "\001 \001(\t\022\017\n\007message\030\002 \001(\t\"-\n\007qSubmit\022\r\n\005nic"
+      "kn\030\001 \001(\t\022\023\n\013qsubmitcode\030\002 \001(\t\"\036\n\013replyRe"
+      "sult\022\017\n\007message\030\001 \001(\t2\367\001\n\013OnlineJudge\0228\n"
+      "\010listQues\022\024.onlinejudge.qSubmit\032\022.online"
+      "judge.qName\"\0000\001\0229\n\ndetailQues\022\022.onlineju"
+      "dge.qName\032\025.onlinejudge.qUestion\"\000\0229\n\005jU"
+      "dge\022\024.onlinejudge.qSubmit\032\030.onlinejudge."
+      "replyResult\"\000\0228\n\006rEsult\022\022.onlinejudge.qN"
+      "ame\032\030.onlinejudge.replyResult\"\000B8\n\034io.gr"
+      "pc.examples.onlinejudgeB\020OnlineJudgeProt"
+      "oP\001\242\002\003OJPb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 529);
+      descriptor, 497);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "onlinejudge.proto", &protobuf_RegisterTypes);
 }
@@ -454,11 +448,9 @@ void qName::InternalSwap(qName* other) {
 // ===================================================================
 
 void qUestion::InitAsDefaultInstance() {
-  ::onlinejudge::_qUestion_default_instance_._instance.get_mutable()->n_ = const_cast< ::onlinejudge::qName*>(
-      ::onlinejudge::qName::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int qUestion::kNFieldNumber;
+const int qUestion::kNicknFieldNumber;
 const int qUestion::kMessageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -473,21 +465,20 @@ qUestion::qUestion(const qUestion& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  nickn_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.nickn().size() > 0) {
+    nickn_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickn_);
+  }
   message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.message().size() > 0) {
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
-  }
-  if (from.has_n()) {
-    n_ = new ::onlinejudge::qName(*from.n_);
-  } else {
-    n_ = NULL;
   }
   // @@protoc_insertion_point(copy_constructor:onlinejudge.qUestion)
 }
 
 void qUestion::SharedCtor() {
+  nickn_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  n_ = NULL;
 }
 
 qUestion::~qUestion() {
@@ -496,8 +487,8 @@ qUestion::~qUestion() {
 }
 
 void qUestion::SharedDtor() {
+  nickn_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete n_;
 }
 
 void qUestion::SetCachedSize(int size) const {
@@ -520,11 +511,8 @@ void qUestion::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  nickn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && n_ != NULL) {
-    delete n_;
-  }
-  n_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -538,12 +526,16 @@ bool qUestion::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .onlinejudge.qName N = 1;
+      // string nickn = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_n()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_nickn()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->nickn().data(), static_cast<int>(this->nickn().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "onlinejudge.qUestion.nickn"));
         } else {
           goto handle_unusual;
         }
@@ -592,10 +584,14 @@ void qUestion::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_n(), output);
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nickn().data(), static_cast<int>(this->nickn().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "onlinejudge.qUestion.nickn");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->nickn(), output);
   }
 
   // string message = 2;
@@ -622,11 +618,15 @@ void qUestion::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_n(), deterministic, target);
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nickn().data(), static_cast<int>(this->nickn().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "onlinejudge.qUestion.nickn");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->nickn(), target);
   }
 
   // string message = 2;
@@ -657,18 +657,18 @@ size_t qUestion::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->nickn());
+  }
+
   // string message = 2;
   if (this->message().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->message());
-  }
-
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *n_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -698,12 +698,13 @@ void qUestion::MergeFrom(const qUestion& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.nickn().size() > 0) {
+
+    nickn_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickn_);
+  }
   if (from.message().size() > 0) {
 
     message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
-  }
-  if (from.has_n()) {
-    mutable_n()->::onlinejudge::qName::MergeFrom(from.n());
   }
 }
 
@@ -731,9 +732,10 @@ void qUestion::Swap(qUestion* other) {
 }
 void qUestion::InternalSwap(qUestion* other) {
   using std::swap;
+  nickn_.Swap(&other->nickn_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   message_.Swap(&other->message_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(n_, other->n_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
@@ -746,12 +748,10 @@ void qUestion::InternalSwap(qUestion* other) {
 // ===================================================================
 
 void qSubmit::InitAsDefaultInstance() {
-  ::onlinejudge::_qSubmit_default_instance_._instance.get_mutable()->n_ = const_cast< ::onlinejudge::qName*>(
-      ::onlinejudge::qName::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int qSubmit::kNFieldNumber;
-const int qSubmit::kQSubmitCodeFieldNumber;
+const int qSubmit::kNicknFieldNumber;
+const int qSubmit::kQsubmitcodeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 qSubmit::qSubmit()
@@ -765,21 +765,20 @@ qSubmit::qSubmit(const qSubmit& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  nickn_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.nickn().size() > 0) {
+    nickn_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickn_);
+  }
   qsubmitcode_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.qsubmitcode().size() > 0) {
     qsubmitcode_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.qsubmitcode_);
-  }
-  if (from.has_n()) {
-    n_ = new ::onlinejudge::qName(*from.n_);
-  } else {
-    n_ = NULL;
   }
   // @@protoc_insertion_point(copy_constructor:onlinejudge.qSubmit)
 }
 
 void qSubmit::SharedCtor() {
+  nickn_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   qsubmitcode_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  n_ = NULL;
 }
 
 qSubmit::~qSubmit() {
@@ -788,8 +787,8 @@ qSubmit::~qSubmit() {
 }
 
 void qSubmit::SharedDtor() {
+  nickn_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   qsubmitcode_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete n_;
 }
 
 void qSubmit::SetCachedSize(int size) const {
@@ -812,11 +811,8 @@ void qSubmit::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  nickn_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   qsubmitcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && n_ != NULL) {
-    delete n_;
-  }
-  n_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -830,19 +826,23 @@ bool qSubmit::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .onlinejudge.qName N = 1;
+      // string nickn = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_n()));
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_nickn()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->nickn().data(), static_cast<int>(this->nickn().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "onlinejudge.qSubmit.nickn"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string qSubmitCode = 2;
+      // string qsubmitcode = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
@@ -851,7 +851,7 @@ bool qSubmit::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->qsubmitcode().data(), static_cast<int>(this->qsubmitcode().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "onlinejudge.qSubmit.qSubmitCode"));
+            "onlinejudge.qSubmit.qsubmitcode"));
         } else {
           goto handle_unusual;
         }
@@ -884,18 +884,22 @@ void qSubmit::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_n(), output);
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nickn().data(), static_cast<int>(this->nickn().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "onlinejudge.qSubmit.nickn");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->nickn(), output);
   }
 
-  // string qSubmitCode = 2;
+  // string qsubmitcode = 2;
   if (this->qsubmitcode().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->qsubmitcode().data(), static_cast<int>(this->qsubmitcode().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "onlinejudge.qSubmit.qSubmitCode");
+      "onlinejudge.qSubmit.qsubmitcode");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->qsubmitcode(), output);
   }
@@ -914,19 +918,23 @@ void qSubmit::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_n(), deterministic, target);
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->nickn().data(), static_cast<int>(this->nickn().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "onlinejudge.qSubmit.nickn");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->nickn(), target);
   }
 
-  // string qSubmitCode = 2;
+  // string qsubmitcode = 2;
   if (this->qsubmitcode().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->qsubmitcode().data(), static_cast<int>(this->qsubmitcode().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "onlinejudge.qSubmit.qSubmitCode");
+      "onlinejudge.qSubmit.qsubmitcode");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->qsubmitcode(), target);
@@ -949,18 +957,18 @@ size_t qSubmit::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string qSubmitCode = 2;
+  // string nickn = 1;
+  if (this->nickn().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->nickn());
+  }
+
+  // string qsubmitcode = 2;
   if (this->qsubmitcode().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->qsubmitcode());
-  }
-
-  // .onlinejudge.qName N = 1;
-  if (this->has_n()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *n_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -990,12 +998,13 @@ void qSubmit::MergeFrom(const qSubmit& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.nickn().size() > 0) {
+
+    nickn_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nickn_);
+  }
   if (from.qsubmitcode().size() > 0) {
 
     qsubmitcode_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.qsubmitcode_);
-  }
-  if (from.has_n()) {
-    mutable_n()->::onlinejudge::qName::MergeFrom(from.n());
   }
 }
 
@@ -1023,9 +1032,10 @@ void qSubmit::Swap(qSubmit* other) {
 }
 void qSubmit::InternalSwap(qSubmit* other) {
   using std::swap;
+  nickn_.Swap(&other->nickn_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   qsubmitcode_.Swap(&other->qsubmitcode_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(n_, other->n_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

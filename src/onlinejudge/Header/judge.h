@@ -2,7 +2,6 @@
 #define judge_h
 
 #include <stdlib.h>
-#include <sstream>
 #include <errno.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -14,38 +13,43 @@
 #define Dtb "ojbase"
 
 
-void useage()
-{
-    std::cout<<"Usage:  \nlist 列出题目列表\ndetail XXX 列出题目详情\nsubmit XXX code.c/cpp提交代码 & 你给他后台编译 & 判题\nresult XXX 查询判题结果"<<std::endl;
-}
+// void useage()
+// {
+//     std::cout<<"Usage:  \nlist 列出题目列表\ndetail XXX 列出题目详情\nsubmit XXX code.c/cpp提交代码 & 你给他后台编译 & 判题\nresult XXX 查询判题结果"<<std::endl;
+// }
 
-void judgeList()
+void judgeList(std::vector<std::string> &namelist)
 {
     database *temp=new database(Dhost,Ddb,Dpw,Dtb);
-    std::vector<std::string> qlist=temp->dbList();
-    unsigned int llen=qlist.size();
-    for(int i=0;i<llen;i++)
-        std::cout<<qlist[i]<<std::endl;
+    namelist=temp->dbList();
+    // std::vector<std::string> qlist=temp->dbList();
+    
+//     unsigned int llen=qlist.size();
+//     for(int i=0;i<llen;i++)
+//         namelist.push_back(qlist[i]);
+//         //std::cout<<qlist[i]<<std::endl;
     delete temp;
 }
 
-void judgeDetail(char *qName)
+std::string judgeDetail(std::string qName)
 {
+    const char * temps=qName.c_str(); 
     database *temp=new database(Dhost,Ddb,Dpw,Dtb);
-    std::string detaii=temp->dbDetail(qName);
-    std::cout<<detaii<<std::endl;
+    std::string detaii=temp->dbDetail(temps);
     delete temp;
+    return detaii;
 }
 
-void judgeResult(char *qName)
+std::string judgeResult(std::string qName)
 {
+    const char * temps=qName.c_str(); 
     database *temp=new database(Dhost,Ddb,Dpw,Dtb);
-    int he=temp->dbResult(qName);
-    if (he == 0)//have more choice!
-        std::cout<<"fail!"<<std::endl;
-    else
-        std::cout<<"success!"<<std::endl;
+    int he=temp->dbResult(temps);
+    std::string ans="fail";
+    if (!he)//have more choice!
+        ans="success";
     delete temp;
+    return ans;
 }
 
 int Jexec(std::string cmd, std::vector<std::string> &resvec) {
@@ -75,23 +79,25 @@ int Jexec(std::string cmd) {
     return 1;
 }
 
-void judgeSubmit(char *qName, char *filename)
+std::string judgeSubmit(std::string qName, std::string code)
 {
+    
+    std::string ans="fail";
     database *temp=new database(Dhost,Ddb,Dpw,Dtb);
     std::string fakename=qName;
     if(Jexec("mkdir "+fakename))
     {
         int submitstatus=temp->dbSubmit(qName);
-        if (submitstatus==1)
+        if (submitstatus ==1)
         {
-            std::ifstream infile; 
-            infile.open(filename); 
-            if (infile.is_open())
-            {
-                std::stringstream buffer;
-                buffer << infile.rdbuf();
-                std::string tempstring = buffer.str();
-                infile.close();
+//             std::ifstream infile; 
+//             infile.open(tempstr); 
+//             if (infile.is_open())
+//             {
+//                 std::stringstream buffer;
+//                 buffer << infile.rdbuf();
+//                 std::string tempstring = buffer.str();
+//                 infile.close();
                 
                 std::string oufilname=fakename+"/Solution.h";
                 const char* result = NULL;
@@ -99,7 +105,7 @@ void judgeSubmit(char *qName, char *filename)
                 std::ofstream mycout(result);
                 if (mycout.is_open())
                 {
-                    mycout<<tempstring;
+                    mycout<<code;
                     mycout.close();
 
                     //There are two file located in ./test\.
@@ -113,7 +119,9 @@ void judgeSubmit(char *qName, char *filename)
                             if (returnfile[0][0]=='1')
                             {
                                 temp->dbChangestatus(qName);
+                                
                                 std::cout<<"LOG--- Congratulation!"<<std::endl;
+                                ans = "success";
                             }
                             else
                             {
@@ -132,11 +140,11 @@ void judgeSubmit(char *qName, char *filename)
                 {
                     std::cout<<"LOG--- OUT solution code fail!"<<std::endl;
                 }
-            }
-            else
-            {
-                std::cout<<"LOG--- IN solution code fail!"<<std::endl;
-            } 
+//             }
+//             else
+//             {
+//                 std::cout<<"LOG--- IN solution code fail!"<<std::endl;
+//             } 
         }
         else
             std::cout<<"LOG--- Read database fail or without this file!"<<std::endl;
@@ -145,6 +153,7 @@ void judgeSubmit(char *qName, char *filename)
     else
         std::cout<<"LOG--- MKDIR fail!"<<std::endl;
     delete temp;
+    return ans;
 }
 
 #endif /* judge_h */

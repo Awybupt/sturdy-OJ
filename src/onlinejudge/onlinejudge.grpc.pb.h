@@ -4,6 +4,7 @@
 // Original file comments:
 // first version of oj.proto
 // mike@2018.12.06
+// wxscs@qq.com
 //
 #ifndef GRPC_onlinejudge_2eproto__INCLUDED
 #define GRPC_onlinejudge_2eproto__INCLUDED

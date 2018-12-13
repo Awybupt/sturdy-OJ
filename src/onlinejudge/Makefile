@@ -8,7 +8,7 @@ LDFLAGS += -L/usr/local/lib `pkg-config --libs protobuf grpc++`\
            -lgrpc++_reflection\
            -ldl
 else
-LDFLAGS += -L/usr/local/lib `pkg-config --libs protobuf grpc++`\
+LDFLAGS += -L/usr/local/lib `mysql_config --cflags --libs` `pkg-config --libs protobuf grpc++`\
            -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed\
            -ldl
 endif
@@ -23,10 +23,10 @@ vpath %.proto $(PROTOS_PATH)
 
 all: system-check onlinejudge_client onlinejudge_server
 
-onlinejudge_client: onlinejudge.pb.o onlinejudge.grpc.pb.o onlinejudgeclient.o helper.o
+onlinejudge_client: onlinejudge.pb.o onlinejudge.grpc.pb.o onlinejudge_client.o
 	$(CXX) $^ $(LDFLAGS) -o $@
 
-onlinejudge_server: onlinejudge.pb.o onlinejudge.grpc.pb.o onlinejudge_server.o helper.o
+onlinejudge_server: onlinejudge.pb.o onlinejudge.grpc.pb.o onlinejudge_server.o
 	$(CXX) $^ $(LDFLAGS) -o $@
 
 %.grpc.pb.cc: %.proto

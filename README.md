@@ -20,6 +20,6 @@
 
 #### [No Bazel](https://docs.bazel.build/versions/master/tutorial/cpp.html)
 
-#### [No Ngix](http://nginx.org/en/docs/beginners_guide.html)
+#### [No Nginx](http://nginx.org/en/docs/beginners_guide.html)
 
 Naive OJ system.
